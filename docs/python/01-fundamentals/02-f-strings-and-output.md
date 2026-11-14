@@ -423,4 +423,3 @@ and let the program update itself.
 10. The invitation generator is your first example of a complete Python program using variables and dynamic output.
 
 :::
-````

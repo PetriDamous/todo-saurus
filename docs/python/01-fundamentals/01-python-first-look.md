@@ -341,4 +341,3 @@ This is commonly used for formatting console output.
 The program uses information stored in variables and combines that information with printed text to produce a formatted invitation.
 
 :::
-````[cite: 5]

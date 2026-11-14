@@ -739,4 +739,3 @@ That's where Python starts feeling like its own language rather than a different
 Variables do not remember old values.
 
 :::
-````
