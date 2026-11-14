@@ -10,6 +10,8 @@ sidebar_position: 1
 
 ## Lesson Overview
 
+:::info
+
 This lesson serves as your first real exposure to reading and modifying a Python program. Instead of starting with theory, the instructor presents a working application: a simple invitation generator that prints a formatted invitation to the terminal. The goal is to become comfortable identifying pieces of Python code and understanding how changing data affects program output. [[scrimba.com]](https://scrimba.com/learn-python-c03/~07fk)
 
 The major concepts introduced are:
@@ -21,6 +23,8 @@ The major concepts introduced are:
 - f-strings
 - Comments
 - Separating data from program logic [[scrimba.com]](https://scrimba.com/learn-python-c03/~07fk)
+
+:::
 
 ---
 
@@ -80,6 +84,8 @@ Here:
 - `name` is the variable name.
 - `"Alice"` is the value stored in the variable.
 
+:::note
+
 Think of variables as labels attached to pieces of information.
 
 Instead of remembering:
@@ -95,6 +101,8 @@ name
 ```
 
 and Python will use the stored value.
+
+:::
 
 ---
 
@@ -124,9 +132,13 @@ The code that performs work:
 print(f"Date: {date}")
 ```
 
+:::tip
+
 This is one of the most important ideas in all programming.
 
 Instead of rewriting program logic every time data changes, you simply update the variables.
+
+:::
 
 ---
 
@@ -174,6 +186,8 @@ Example:
 host = "Scrimba"
 ```
 
+:::note
+
 Read this as:
 
 Assign the value "Scrimba" to the variable host
@@ -184,9 +198,13 @@ host equals Scrimba
 
 In programming, `=` generally means "assign" rather than mathematical equality.
 
+:::
+
 ---
 
 # Python vs JavaScript
+
+:::info
 
 ### JavaScript
 
@@ -208,6 +226,8 @@ Notice what Python removes:
 - No semicolon
 
 The variable is created automatically when assigned a value.
+
+:::
 
 ---
 
@@ -315,5 +335,10 @@ Line 1
 Line 2
 ```
 
+:::tip
+
 This is commonly used for formatting console output.
 The program uses information stored in variables and combines that information with printed text to produce a formatted invitation.
+
+:::
+````[cite: 5]

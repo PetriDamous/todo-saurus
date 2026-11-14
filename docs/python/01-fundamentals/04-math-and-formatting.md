@@ -14,6 +14,8 @@ These notes contain everything we've covered through the PayUp project, includin
 
 ## Section Overview
 
+:::info
+
 At this stage, you are not really learning programming.
 You are learning:
 
@@ -32,6 +34,8 @@ Most of the concepts so far are universal programming concepts:
 - String Formatting
 
 The challenge is learning Python's syntax and conventions.
+
+:::
 
 ---
 
@@ -78,11 +82,17 @@ Example:
 age = 35
 ```
 
+:::note
+
 Read this as:
 > Assign 35 to age.
 > Not: age equals 35
 
+:::
+
 ### JavaScript Comparison
+
+:::info
 
 JavaScript:
 
@@ -101,6 +111,8 @@ Differences:
 - No `let`
 - No `var`
 - No semicolon
+
+:::
 
 ### Variable Reassignment
 
@@ -122,6 +134,8 @@ Now `score` contains `20`, not `10`. The previous value is replaced.
 
 ### Mental Model
 
+:::info
+
 Think of a whiteboard.
 Initially:
 ```python
@@ -131,6 +145,8 @@ Later: erase and replace with:
 ```python
 score = 20
 ```
+
+:::
 
 ---
 
@@ -190,6 +206,8 @@ price = 19.99
 
 ### Why Floats Exist
 
+:::note
+
 JavaScript hides this distinction.
 
 JavaScript:
@@ -205,6 +223,8 @@ typeof 35.5
 Same type.
 
 Python is more explicit: `35` is `int`, while `35.5` is `float`.
+
+:::
 
 ### `None`
 
@@ -264,6 +284,8 @@ Stored value: `"Dimitri"`
 
 ### JavaScript Comparison
 
+:::info
+
 JavaScript:
 
 ```javascript
@@ -276,7 +298,11 @@ Python:
 name = input("Enter your name: ")
 ```
 
+:::
+
 ### Important Rule
+
+:::warning
 
 Input always returns a string.
 
@@ -284,6 +310,8 @@ Example:
 User enters: `35`
 Python stores: `"35"`, not `35`.
 Type: `str`
+
+:::
 
 ---
 
@@ -321,6 +349,8 @@ Type: `float`
 
 ### JavaScript Comparison
 
+:::info
+
 JavaScript:
 ```javascript
 Number(prompt())
@@ -333,6 +363,8 @@ Python:
 int()
 float()
 ```
+
+:::
 
 ---
 
@@ -368,13 +400,23 @@ print(f"Hello {name}")
 ```
 
 #### What The `f` Means
+
+:::note
+
 The `f` tells Python:
 > Evaluate expressions inside `{}` and insert the result into the string.
 
+:::
+
 #### JavaScript Comparison
+
+:::info
+
 - JavaScript: ``console.log(`Hello ${name}`);``
 - Python: `print(f"Hello {name}")`
 - Same concept. Different syntax.
+
+:::
 
 #### Expressions Inside f-Strings
 ```python
@@ -398,7 +440,11 @@ print("=" * 40)
 # Output: ========================================
 ```
 
+:::tip
+
 Very useful for terminal formatting.
+
+:::
 
 ---
 
@@ -426,6 +472,8 @@ To compute `X% of Y`, use `Y * X / 100`:
 
 ### Order Of Operations (PEMDAS)
 
+:::note
+
 Python follows standard math rules:
 1. Parentheses
 2. Exponents
@@ -438,6 +486,8 @@ Multiplication and division share equal priority. Python evaluates them left-to-
 100 * 20 / 100
 # becomes 2000 / 100, then 20
 ```
+
+:::
 
 ---
 
@@ -474,6 +524,8 @@ print(f"{value:.2f}")
 
 ### JavaScript Comparison
 
+:::info
+
 - Python: `f"{value:.2f}"`
 - JavaScript: `value.toFixed(2)`
   ```javascript
@@ -481,7 +533,11 @@ print(f"{value:.2f}")
   // Output: 15.68
   ```
 
+:::
+
 ### Important Discovery
+
+:::warning
 
 Formatting creates a string:
 
@@ -491,6 +547,8 @@ print(type(formatted))
 ```
 
 Formatting is for display only. Not calculations.
+
+:::
 
 ### `round()`
 
@@ -567,12 +625,16 @@ Example:
 # Output: hello
 ```
 
+:::warning
+
 **Important Rule:** Only removes characters from Beginning and End, not the middle:
 
 ```python
 "##he#llo##".strip("#")
 # Output: he#llo
 ```
+
+:::
 
 ### `split()`
 
@@ -611,6 +673,8 @@ print(data.split(","))
 
 ### String Immutability
 
+:::warning
+
 **Strings do not change:**
 
 ```python
@@ -628,11 +692,14 @@ name = name.strip()
 
 to save the new value. 
 
+:::
+
 :::info
 **Why?** 
 
 Methods return new strings. The original string remains untouched.
 :::
+
 ---
 
 ## JavaScript To Python Translation Guide
@@ -653,6 +720,8 @@ Methods return new strings. The original string remains untouched.
 
 ### Developer Perspective
 
+:::tip
+
 At this point, Python should feel familiar. You are not learning Programming—you are learning Python vocabulary.
 The major new ideas later in the course will likely be:
 - Lists
@@ -668,3 +737,6 @@ The major new ideas later in the course will likely be:
 
 That's where Python starts feeling like its own language rather than a different syntax for concepts you already know from JavaScript. 🐍🚀
 Variables do not remember old values.
+
+:::
+````

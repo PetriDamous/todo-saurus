@@ -8,6 +8,8 @@ sidebar_position: 3
 
 ## Lesson Overview
 
+:::info
+
 This lesson expands on the concept of variables and focuses on their primary purpose in programming: storing information so it can be used, updated, and reused throughout a program. The lesson uses a future "Pay Up" app as motivation, where values such as meal cost, party size, and tip percentage will need to be stored and manipulated. [scrimba.com]
 
 The major concepts introduced are:
@@ -17,6 +19,8 @@ The major concepts introduced are:
 - Retrieving stored values
 - Reassigning variables
 - Updating information in a program [scrimba.com]
+
+:::
 
 ---
 
@@ -65,6 +69,8 @@ meal_total = 85
 
 ## Assignment Definition
 
+:::note
+
 Assignment is the process of storing a value inside a variable using the `=` operator. [scrimba.com]
 
 Example:
@@ -91,6 +97,7 @@ In programming, the equals sign typically means:
 Store this value here
 ```
 
+:::
 
 ---
 
@@ -118,6 +125,8 @@ Output:
 Python looks up the value associated with the variable name and prints it. [scrimba.com]
 
 ## Variables Hold Information
+
+:::info
 
 Think of a variable like a labeled box.
 
@@ -148,6 +157,8 @@ it opens the box and retrieves:
 ```text
 85
 ```
+
+:::
 
 ---
 
@@ -184,6 +195,8 @@ Only the value changes. [scrimba.com]
 
 ## Why Updating Variables Is Useful
 
+:::tip
+
 Imagine a restaurant bill changes.
 Instead of hunting through your program and changing every occurrence of:
 
@@ -205,6 +218,8 @@ meal_total
 
 automatically receives the new value.
 This is one of the biggest benefits of variables.
+
+:::
 
 ---
 
@@ -298,6 +313,8 @@ The old value is replaced.
 
 ## A Common Beginner Misunderstanding
 
+:::warning
+
 Consider:
 
 ```python
@@ -337,6 +354,8 @@ not:
 5
 ```
 
+:::
+
 ## Variables Can Be Printed Multiple Times
 
 Example:
@@ -363,6 +382,8 @@ This demonstrates that Python evaluates variables using their current value at t
 ---
 
 ## Python vs JavaScript
+
+:::info
 
 ### Python
 
@@ -401,6 +422,8 @@ score = 25
 
 Perfectly normal Python.
 
+:::
+
 ---
 
 ## Looking Ahead
@@ -426,6 +449,8 @@ You'll learn more about this soon, but it builds directly on the reassignment co
 
 ## Variable Lifecycle
 
+:::note
+
 Throughout this lesson, variables follow a simple lifecycle:
 
 1. **Create:** `meal_total = 85`
@@ -435,9 +460,13 @@ Throughout this lesson, variables follow a simple lifecycle:
 
 This pattern appears everywhere in programming.
 
+:::
+
 ---
 
 ## Mental Model
+
+:::info
 
 Think of a variable as a whiteboard.
 
@@ -467,9 +496,13 @@ my_party = 10
 
 The board only displays the most recent value.
 
+:::
+
 ---
 
 ## Common Beginner Mistakes
+
+:::warning
 
 ### Forgetting to Print the Variable
 
@@ -534,6 +567,8 @@ It only contains:
 
 after reassignment.
 
+:::
+
 ---
 
 ## Key Terms
@@ -549,6 +584,8 @@ after reassignment.
 
 ## Key Takeaways
 
+:::tip
+
 1. Variables allow programs to store information for later use.
 2. Assignment uses the `=` operator.
 3. The variable name goes on the left and the value goes on the right.
@@ -562,3 +599,6 @@ after reassignment.
 
 This lesson solidifies the foundational Python workflow you'll use throughout the rest of the course: store a value, recall it, update it, and reuse it. 🐍
 rather than mathematical equality.
+
+:::
+````

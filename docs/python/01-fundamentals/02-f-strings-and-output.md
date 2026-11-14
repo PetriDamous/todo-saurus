@@ -16,12 +16,16 @@ print(f"Hosted by: {host}")
 
 ## What Does the f Mean?
 
+:::note
+
 The f tells Python:
 
 ```text
 Evaluate anything inside {}
 and insert its value here.
 ```
+
+:::
 
 ## Example
 
@@ -57,6 +61,8 @@ host
 
 ## JavaScript Comparison
 
+:::info
+
 Python:
 
 ```python
@@ -72,6 +78,8 @@ console.log(`Hello ${name}`);
 The concept is essentially the same:
 - Insert variable values into a string.
 - Create dynamic output.
+
+:::
 
 ## Curly Braces in f-Strings
 
@@ -97,6 +105,7 @@ Output:
 
 ```text
 Hello PetriD
+```
 
 ---
 
@@ -138,7 +147,11 @@ creates:
 ========================================
 ```
 
+:::tip
+
 This is often used when formatting terminal output.
+
+:::
 
 ---
 
@@ -170,6 +183,8 @@ name = "Emily"
 
 you can rerun the file to immediately see updated output.
 
+:::note
+
 This reinforces an important development cycle:
 
 ```text
@@ -185,6 +200,8 @@ Repeat
 ```
 
 You'll follow this process constantly as a developer.
+
+:::
 
 ---
 
@@ -280,6 +297,8 @@ Only the data changed, but the output changed automatically.
 
 # Mental Model
 
+:::info
+
 Think of variables like form fields.
 
 ```python
@@ -301,9 +320,13 @@ name = "Alice"
 
 every part of the program using `name` automatically sees the new value.
 
+:::
+
 ---
 
 # Common Beginner Mistakes
+
+:::warning
 
 ## Forgetting Quotes Around Text
 
@@ -364,6 +387,8 @@ name = "PetriD"
 
 and let the program update itself.
 
+:::
+
 ---
 
 # Key Terms
@@ -380,6 +405,8 @@ and let the program update itself.
 
 # Key Takeaways
 
+:::tip
+
 1. Variables store information that can be reused throughout a program.
 2. Changing a variable changes every place that variable is used.
 3. Strings are text values enclosed in quotes.
@@ -394,4 +421,6 @@ and let the program update itself.
    - Run program
    - Check results
 10. The invitation generator is your first example of a complete Python program using variables and dynamic output.
-```
+
+:::
+````
