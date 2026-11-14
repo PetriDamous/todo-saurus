@@ -22,16 +22,22 @@ const config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+  // GitHub Pages deployment fields (update with your GitHub username/repo):
+  //   url:             'https://<YOUR_GITHUB_USERNAME>.github.io'
+  //   baseUrl:         '/todo-saurus/'   (or '/' if deploying to <YOUR_GITHUB_USERNAME>.github.io root repo)
+  //   organizationName: '<YOUR_GITHUB_USERNAME>'
+  //   projectName:     '<YOUR_REPO_NAME>'
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://PetriDamous.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/todo-saurus/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'PetriDamous', // Usually your GitHub org/user name.
   projectName: 'todo-saurus', // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
