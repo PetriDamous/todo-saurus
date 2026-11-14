@@ -6,7 +6,11 @@ sidebar_position: 4
 
 # Python Logic and Loops: The `.join()` Method
 
+:::info
+
 **Lesson Goal:** Learn how to convert lists back into strings, understand separators, complete the `string → list → manipulation → string` workflow, and compare Python's `.join()` to JavaScript's `Array.join()` method. This lesson is extremely important because it introduces one of the most commonly used string methods in Python.
+
+:::
 
 ---
 
@@ -54,6 +58,8 @@ After: "".join(["c", "a", "t"])   (Type: str)
 
 ## The Weird Syntax & JavaScript Comparison
 
+:::note
+
 Most methods are called on the data (e.g., `"hello".upper()` or `"hello".strip()`), but `join()` looks backwards—**the separator comes first**:
 
 ```python
@@ -71,11 +77,18 @@ Separator: ", "
 Result: peace, love, happiness
 ```
 
+:::
+
 ### JavaScript Comparison
+
+:::info
+
 - **JavaScript:** `words.join(", ");` → `"peace, love, happiness"`
 - **Python:** `", ".join(words)` → `"peace, love, happiness"`
 
 **Why Python Uses This Syntax:** Python's philosophy treats the separator as the main actor (*"Separator, please join these items"*). It feels strange initially, but becomes natural quickly.
+
+:::
 
 ---
 
@@ -134,11 +147,19 @@ An empty string separator `""` inserts nothing between characters.
 ```
 
 ### Choosing Between `list()` and `split()`
+
+:::tip
+
 - **`list("dog cat")`** → `['d', 'o', 'g', ' ', 'c', 'a', 't']` (breaks into individual characters; space included).
+- **`"dog cat".split()`** → `['dog', 'cat']` (breaks using whitespace as separator).
+
+:::
 
 ---
 
 ## Common Beginner Mistakes
+
+:::warning
 
 1. **Calling `.join()` on the list (JS habit):**
    ```python
@@ -149,6 +170,8 @@ An empty string separator `""` inserts nothing between characters.
    ```
 2. **Assuming `join()` returns a list:** `"".join(["c", "a", "t"])` returns `"cat"` (`str`), not `list`.
 3. **Assuming `join()` modifies the original list:** The original list `["c", "a", "t"]` remains untouched; a brand-new string is returned.
+
+:::
 
 ---
 
@@ -172,6 +195,9 @@ An empty string separator `""` inserts nothing between characters.
 | `"-".join(parts)` | `parts.join("-")` |
 
 ### Key Takeaways
+
+:::tip
+
 1. `.join()` converts a list into a string.
 2. The separator comes first in Python's syntax.
 3. The separator is simply a string.
@@ -181,4 +207,4 @@ An empty string separator `""` inserts nothing between characters.
 7. `join()` returns a brand-new string and does not modify the original list.
 8. Common separators include `" "`, `","`, `"-"`, and `"/"`.
 9. Understanding `list()`, `split()`, and `join()` together gives you a complete toolkit for converting between strings and lists in Python.
-- **`"dog cat".split()`** → `['dog', 'cat']` (breaks using whitespace as separator).
+:::

@@ -7,9 +7,14 @@ sidebar_position: 5
 # Python Notes: Tuples, Immutability & Tuple Unpacking
 
 ## 1. Course Module & Lesson Title
+
+:::info
+
 - **Module:** Module 2 — Control Flow & Logic (Building the Word-Scramble Game / Data Structures)
 - **Lesson Topic:** Tuples, Lists vs. Tuples & Sequence Unpacking
 - **Scrimba URL:** [https://scrimba.com/learn-python-c03/~0zoz](https://scrimba.com/learn-python-c03/~0zoz)
+
+:::
 
 ---
 
@@ -27,6 +32,8 @@ This lesson introduces tuples (`tuple`), one of Python's four built-in collectio
 ---
 
 ## 3. JS vs. Python Mental Bridge
+
+:::info
 
 ### Does JavaScript Have Tuples?
 Vanilla JavaScript does not have a native tuple type (the TC39 Record & Tuple proposal never reached standard ES adoption). In JS, developers simulate tuples using standard Arrays, TypeScript tuple types (`[string, number]`), or `Object.freeze()`:
@@ -85,6 +92,9 @@ print(shopping_list) # Output: ['oat milk', 'eggs', 'bread']
 coordinates = (29.4241, -98.4936)
 # coordinates[0] = 30.0000  # Crashes with TypeError!
 print(coordinates) # Output: (29.4241, -98.4936)
+```
+
+:::
 
 ---
 
@@ -100,7 +110,9 @@ steel_blue = (70, 130, 180)
 print(steel_blue[1])
 # Output: 130
 ```
+:::note
 **Why this works:** Even though tuples are defined with parentheses `()`, you still access elements by index using square brackets `[]`.
+:::
 
 #### Demo 2: Basic Tuple Unpacking
 ```python
@@ -113,7 +125,9 @@ print(red)   # Output: 70
 print(green) # Output: 130
 print(blue)  # Output: 180
 ```
+:::note
 **Why this works:** Python counts the items on the right (`3`) and matches them position-by-position to the variable names on the left (`red`, `green`, `blue`).
+:::
 
 #### Demo 3: A List of Tuples (Nested Data Structure)
 ```python
@@ -137,7 +151,9 @@ red, green, blue = color_palette[1]
 print(f"RGB: {red}, {green}, {blue}")
 # Output: RGB: 240, 128, 128
 ```
+:::note
 **Why this works:** Combining a mutable `list` outer container with immutable `tuple` inner records is a core Python pattern. You can add or remove colors from `color_palette`, while each individual RGB color stays protected as an immutable 3-part unit.
+:::
 
 ---
 
@@ -171,6 +187,8 @@ print(f"{staplers}: {staplers_stock} in stock")
 
 ## 5. Common Pitfalls & Gotchas for JS Devs
 
+:::danger
+
 ### 1. Unpacking Count Mismatch (`ValueError`)
 In JavaScript, destructuring fewer variables than array elements silently ignores the extras, and extra variables become `undefined`. In Python, the variable count must match the tuple length exactly:
 
@@ -189,6 +207,10 @@ point = (10, 20, 30)
 # x, y, z, w = point
 # Raises -> ValueError: not enough values to unpack (expected 4, got 3)
 ```
+
+:::
+
+:::warning
 
 ### 2. Single-Element Tuple Trailing Comma Trap
 Parentheses in Python are also used for grouping math expressions (`(5 + 3)`). To create a tuple with only one item, you must include a trailing comma:
@@ -218,9 +240,13 @@ print(record)
 # Output: ('Alice', [90, 85, 95])
 ```
 
+:::
+
 ---
 
 ## 6. Edge Cases to Watch For
+
+:::note
 
 ### Swapping Variables Without a Temporary Variable
 Because Python evaluates the right side of an assignment as an implicit tuple before unpacking it into the left side, swapping two variables takes one line:
@@ -248,9 +274,13 @@ print(f"{username} ({role})")
 # Output: jsmith (admin)
 ```
 
+:::
+
 ---
 
 ## 7. Practical Patterns & Reusable Recipes
+
+:::tip
 
 ### Pattern 1: Unpacking Directly Inside a `for` Loop (Preview of Next Concept)
 Instead of manually unpacking `inventory[0]`, `inventory[1]`, `inventory[2]`, Python lets you unpack tuples right in the `for` loop header:
@@ -282,4 +312,5 @@ width, height = get_dimensions()
 print(f"{width}x{height}")
 # Output: 1920x1080
 ```
-```
+
+:::

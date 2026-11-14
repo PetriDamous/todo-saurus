@@ -7,13 +7,20 @@ sidebar_position: 2
 # Python Notes: Lists & Appending Elements (`list.append()`)
 
 ## 1. Course Module & Lesson Title
+
+:::info
+
 - **Module:** Module 2 — Control Flow & Logic (Building the Word-Scramble Game / Lists)
 - **Lesson Topic:** Creating Empty Lists & Mutating Lists in Place with `.append()`
 - **Scrimba URL:** [https://scrimba.com/learn-python-c03/~03gu](https://scrimba.com/learn-python-c03/~03gu)
 
+:::
+
 ---
 
 ## 2. Python List vs. JavaScript Array Mental Model
+
+:::info
 
 For a JavaScript developer: **Python List ≈ JavaScript Array**.
 
@@ -32,6 +39,8 @@ Immediately you'll notice:
 - Ordered collection of values
 - Index access
 - Can contain multiple data types
+
+:::
 
 ### Accessing Items
 ```javascript
@@ -67,6 +76,9 @@ Just like JavaScript (`["Dimitri", 35, true]`), although Python developers typic
 ### Where Lists Start Differing: Negative Indexing & Slicing
 
 #### Negative Indexing (Python Superpower)
+
+:::tip
+
 ```python
 fruits = ["apple", "banana", "orange"]
 print(fruits[-1])
@@ -79,6 +91,8 @@ JavaScript doesn't have this behavior. In Python:
 - `-1` = last item
 - `-2` = second-to-last item
 
+:::
+
 #### Slicing
 ```python
 fruits = ["apple", "banana", "orange", "grape"]
@@ -90,15 +104,21 @@ print(fruits[1:3])
 
 ## 3. Concept Breakdown: Mutating Lists with `.append()`
 
+:::note
+
 This lesson introduces lists (`list`)—Python's primary dynamic, ordered collection—and demonstrates how to build a list incrementally using `.append()`:
 
 - **Lists Are Mutable:** Unlike strings (`str`) and tuples (`tuple`), Python lists can be modified in place after creation. You do not need to reassign the variable (`lobby = lobby.append(...)` is a bug!) when adding items.
 - **What `.append(item)` Does:** Adds a single element to the very end of an existing list and returns `None`.
 - **Dynamic Sizing:** Starting with an empty list (`[]`) and appending items one by one as events occur (such as user inputs or players joining a game) is one of the most common patterns in Python.
 
+:::
+
 ---
 
 ## 4. JS vs. Python Mental Bridge
+
+:::info
 
 ### Creating and Appending to Arrays / Lists
 
@@ -138,6 +158,8 @@ return_val = items.append("c")
 print(return_val) # Output: None
 print(items)      # Output: ['a', 'b', 'c']
 ```
+
+:::
 
 ---
 
@@ -206,6 +228,8 @@ print(lobby)
 
 ## 6. Common Pitfalls & Gotchas for JS Devs
 
+:::danger
+
 ### 1. Reassigning a Variable to `.append()` (Wipes Your List to `None`!)
 Because string methods return new strings (`name = name.strip()`), beginners often assume list methods work the same way. Because `.append()` returns `None`, reassigning overwrites your entire list:
 
@@ -223,6 +247,10 @@ lobby.append("Thor")
 print(lobby)
 # Output: ['Xena', 'Thor']
 ```
+
+:::
+
+:::warning
 
 ### 2. Passing Multiple Arguments to `.append()` (`TypeError`)
 In JavaScript, `arr.push("a", "b", "c")` adds three items at once. In Python, `.append()` accepts strictly one argument:
@@ -252,9 +280,13 @@ print(lobby)
 # Output: ['Xena', ['Thor', 'Merlin']]  <-- Nested list! Length is 2, not 3!
 ```
 
+:::
+
 ---
 
 ## 7. Edge Cases to Watch For
+
+:::note
 
 ### Inserting at Specific Positions vs. Appending to the End
 `.append()` always adds to index `-1` (the end). If you need to insert at the beginning or middle of a list (like JS `arr.unshift()` or `arr.splice()`), use `.insert(index, item)`:
@@ -268,9 +300,13 @@ print(lobby)
 # Output: ['VIP_Admin', 'Xena', 'Thor']
 ```
 
+:::
+
 ---
 
 ## 8. Practical Patterns & Reusable Recipes
+
+:::tip
 
 ### Pattern 1: Building a List Inside a `while` Loop
 Combining `while` loops with `.append()` lets you collect an unknown number of items until a stop condition is met:
@@ -299,3 +335,5 @@ lobby.remove("Thor")
 print(lobby)       # Output: ['Xena', 'Merlin']
 ```
 JavaScript has something similar with `fruits.slice(1, 3);`, but Python's slicing syntax is built directly into the language.
+
+:::

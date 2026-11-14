@@ -7,15 +7,24 @@ sidebar_position: 1
 # Python Notes: String Methods & Method Chaining
 
 ## 1. Course Module & Lesson Title
+
+:::info
+
 - **Module:** Module 2 — Control Flow & Logic (Building the Word-Scramble Game / Text Sanitization)
 - **Lesson Topic:** Built-in String Methods (`strip`, `upper`, `lower`, `title`, `join`) & Method Chaining
 - **Scrimba URL:** [https://scrimba.com/learn-python-c03/~0yq2](https://scrimba.com/learn-python-c03/~0yq2)
+
+:::
 
 ---
 
 ## 2. Concept Breakdown
 
+:::note
+
 In Python, strings are immutable. Once created in memory, a string cannot be modified in-place. Every string method returns a brand-new string.
+
+:::
 
 - **Trimming Characters (`.strip()`):** Removes whitespace from both the beginning and end of a string by default. When an argument is provided, it strips all occurrences of those specified characters from the ends.
 - **Casing Methods (`.upper()`, `.lower()`, `.title()`):** Convert case representations across the string. `.title()` capitalizes the first character of each word and forces the rest of the word to lowercase.
@@ -25,6 +34,8 @@ In Python, strings are immutable. Once created in memory, a string cannot be mod
 ---
 
 ## 3. JS vs. Python Mental Bridge
+
+:::info
 
 ### Trimming Whitespace
 
@@ -90,6 +101,9 @@ console.log(joined); // "chicken tikka masala"
 words = ["chicken", "tikka", "masala"]
 joined = " ".join(words)
 print(joined) # "chicken tikka masala"
+```
+
+:::
 
 ---
 
@@ -203,6 +217,9 @@ print(clean_name)
 ```
 
 ### Why It Is More Powerful Than `trim()`
+
+:::info
+
 JavaScript's `trim()` only removes whitespace. Python's `strip()` can remove whitespace or custom characters:
 
 ```python
@@ -218,7 +235,12 @@ print(text.strip("!?"))
 ```
 Python treats `"!?"` as a collection of characters to remove from either end.
 
+:::
+
 ### Important Rule & Common Beginner Misunderstanding
+
+:::warning
+
 `strip()` only removes matching characters from the **Beginning** and **End** of the string. It does not remove characters from the middle:
 
 ```python
@@ -234,15 +256,24 @@ print(text.strip("abc"))
 # Output: Hello
 ```
 
+:::
+
 ### Real World Usage
+
+:::tip
+
 User input sanitization:
 ```python
 name = input("Enter name: ").strip()
 ```
 
+:::
+
 ---
 
 ## 6. Common Pitfalls & Gotchas for JS Devs
+
+:::warning
 
 ### Inverted `.join()` Receiver
 ```python
@@ -282,9 +313,13 @@ print(contraction.title())
 # Notice the capitalized 'R' after the apostrophe! Python treats punctuation as a word boundary.
 ```
 
+:::
+
 ---
 
 ## 7. Edge Cases to Watch For
+
+:::danger
 
 ### Stripping Character Sets vs. Exact Words
 ```python
@@ -316,9 +351,13 @@ formatted = ", ".join(str(n) for n in numbers)
 print(formatted) # Output: "1, 2, 3"
 ```
 
+:::
+
 ---
 
 ## 8. Practical Patterns & Reusable Recipes
+
+:::tip
 
 ### Pattern 1: Complete Form Input Sanitizer
 ```python
@@ -339,4 +378,5 @@ trailing_notes = "user_name_temp____"
 clean_name = trailing_notes.rstrip('_')
 print(clean_name) # Output: "user_name_temp"
 ```
-```
+
+:::

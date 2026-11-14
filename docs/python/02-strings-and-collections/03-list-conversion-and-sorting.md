@@ -6,7 +6,11 @@ sidebar_position: 3
 
 # Python Logic and Loops: The `list()` Function, `.split()` & `sorted()`
 
+:::info
+
 **Lesson Goal:** Learn how to convert strings into lists, manipulate individual characters, use the `sorted()` function, and understand why this is useful for solving problems like detecting anagrams. This lesson is also your first real introduction to treating strings as sequences of characters rather than just blocks of text. [[scrimba.com]](https://scrimba.com)
+
+:::
 
 ---
 
@@ -30,7 +34,11 @@ This introduces:
 
 ## Strings As Sequences
 
+:::note
+
 Before we can understand `list()`, we need to understand something important about strings. A string is not just a block of text—Python treats a string as an ordered sequence of characters.
+
+:::
 
 ```python
 word = "listen"
@@ -59,6 +67,9 @@ The instructor demonstrates this exact concept using the word `"listen"` and acc
 - **Python:** `print("listen"[3])` -> Output: `t`
 
 ### Negative Indexing on Strings
+
+:::tip
+
 ```python
 word = "dog"
 print(word[-1])
@@ -66,7 +77,12 @@ print(word[-1])
 ```
 Python lets you count backwards (`0` = first, `-1` = last, `-2` = second last). This works for both strings and lists.
 
+:::
+
 ### Mental Model
+
+:::info
+
 Think of a string as a row of numbered boxes:
 
 ```text
@@ -77,6 +93,8 @@ Think of a string as a row of numbered boxes:
 ```
 
 When you do `word[3]`, Python goes to box `3` and returns `t`.
+
+:::
 
 ### Strings Are Difficult To Rearrange
 
@@ -119,8 +137,13 @@ A list containing three separate elements.
 ```
 
 ### JavaScript Comparison
+
+:::info
+
 - **Python:** `list("dog")`
 - **JavaScript equivalent:** `"dog".split("")` or `Array.from("dog")` -> `["d", "o", "g"]`
+
+:::
 
 ---
 
@@ -154,11 +177,21 @@ list("big dog")
 ```
 
 ### Real-World Analogy
+
+:::info
+
 Imagine `"dog,cat,bird"` is a whole pizza. `split()` is the pizza cutter. After cutting, you have individual slices—the result of using the cutter is a `list`.
 
+:::
+
 ### Quick Rule
+
+:::tip
+
 - Want `['d', 'o', 'g']` (characters)? Use `list("dog")` (≈ JS `"dog".split("")`).
 - Want `['dog', 'cat', 'bird']` (words)? Use `"dog cat bird".split()` (≈ JS `"dog cat bird".split(" ")`).
+
+:::
 
 ---
 
@@ -176,6 +209,8 @@ print(sorted(letters))
 
 ### Important Discovery: `sorted()` Does NOT Mutate
 
+:::warning
+
 Many JavaScript developers assume `sorted(letters)` changes `letters` in place like `letters.sort()` in JS. **It doesn't.**
 
 ```python
@@ -185,6 +220,9 @@ sorted_letters = sorted(letters)
 print(letters)         # ['l', 'i', 's', 't', 'e', 'n'] (Still unchanged!)
 print(sorted_letters)  # ['e', 'i', 'l', 'n', 's', 't'] (New sorted list)
 ```
+
+:::
+
 :::note
 *(Note: Python lists also have an in-place `.sort()` method—`animals.sort()`—which mutates the original list directly like JavaScript's `.sort()`, whereas `sorted(animals)` is a built-in function that returns a new list).*
 :::
@@ -223,6 +261,9 @@ print(sorted(heart_list))
 Match! Therefore `earth` and `heart` are anagrams (and `below` / `elbow` match too, while `night` and `tight` produce different sorted lists and are not anagrams). [[scrimba.com]](https://scrimba.com)
 
 ### JavaScript Equivalent Strategy
+
+:::info
+
 ```javascript
 const first = "listen";
 const second = "silent";
@@ -230,7 +271,12 @@ const result = first.split("").sort().join("") === second.split("").sort().join(
 console.log(result); // true
 ```
 
+:::
+
 ### Things The Course Didn't Cover: You Don't Actually Need `list()`
+
+:::tip
+
 Python can sort a string directly because strings are iterable:
 ```python
 sorted("listen") == sorted("silent")  # Output: True
@@ -238,15 +284,25 @@ sorted("dog")                         # Output: ['d', 'g', 'o'] (returns a list!
 ```
 The course intentionally introduces `list()` first to teach list conversion and manipulation.
 
+:::
+
 ---
 
 ## Common Beginner Mistakes & Key Takeaways
 
 ### Common Mistakes
+
+:::warning
+
 1. **Confusing `list()` with `split()`:** `list("dog")` → `['d', 'o', 'g']`, whereas `"dog".split()` → `['dog']`.
 2. **Thinking `sorted()` changes the original list:** Always store or print the returned list (`new_list = sorted(letters)`).
 
+:::
+
 ### Key Takeaways
+
+:::tip
+
 1. Strings are ordered sequences of characters. [\[scrimba.com\]](https://scrimba.com)
 2. Individual characters can be accessed using indexes. [\[scrimba.com\]](https://scrimba.com)
 3. `list()` converts a string into a list of individual characters. [\[scrimba.com\]](https://scrimba.com)
@@ -258,3 +314,5 @@ The course intentionally introduces `list()` first to teach list conversion and 
 9. `list("dog")` is conceptually similar to JavaScript's `"dog".split("")`.
 10. Understanding strings as sequences is the foundation for upcoming topics involving lists, loops, and text processing.
 You can read characters from strings, but you cannot easily rearrange characters in strings. [[scrimba.com]](https://scrimba.com) That is why Python developers convert strings into lists (`['l', 'i', 's', 't', 'e', 'n']`) to sort, shuffle, and manipulate letters.
+
+:::
