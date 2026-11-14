@@ -7,13 +7,20 @@ sidebar_position: 3
 # Python Notes: `while` Loops, Loop Control (`break`) & Constants Convention
 
 ## 1. Course Module & Lesson Title
+
+:::info
+
 - **Module:** Module 2 — Control Flow & Logic (Building the Word-Scramble Game / Iteration)
 - **Lesson Topic:** `while` Loops, Shorthand Incrementing (`+=`), `break` Statements & PEP 8 Constants
 - **Scrimba URL:** [https://scrimba.com/learn-python-c03/~02nq](https://scrimba.com/learn-python-c03/~02nq)
 
+:::
+
 ---
 
 ## 2. Concept Breakdown
+
+:::note
 
 This lesson introduces conditional iteration using `while` loops and demonstrates how to control loop termination:
 
@@ -25,9 +32,13 @@ This lesson introduces conditional iteration using `while` loops and demonstrate
 - **Early Exit with `break`:** Immediately terminates the loop regardless of whether the `while` condition is still `True`, jumping straight to the code after the loop.
 - **Constants Naming Convention (`ALL_CAPS`):** Python has no language-enforced `const` keyword. By universal convention (PEP 8), variables intended to remain unchanged are written in `ALL_SNAKE_CAPS` (e.g., `PASSENGERS = 5`, `TOTAL_LAPS = 10`) to signal to other developers not to reassign them.
 
+:::
+
 ---
 
 ## 3. JS vs. Python Mental Bridge
+
+:::info
 
 ### Basic `while` Loop Syntax
 
@@ -81,6 +92,8 @@ TOTAL_LAPS = 10
 # Python technically allows TOTAL_LAPS = 20, so uppercase is a human warning sign
 ```
 
+:::
+
 ---
 
 ## 4. Code Walkthrough
@@ -122,6 +135,9 @@ while count <= 5:
 **Why this works:** `+=` is the idiomatic shorthand for updating a variable in place.
 
 #### Demo 3: The Infinite Loop Trap (Missing Update Step)
+
+:::danger
+
 ```python
 count = 1
 
@@ -136,6 +152,8 @@ while count <= 5:
 # 1 ... (repeats forever until interrupted with Ctrl+C or browser tab freezes)
 ```
 **Why this breaks:** `count` stays `1` forever, meaning `count <= 5` is permanently `True`.
+
+:::
 
 #### Demo 4: Stopping Early with `break`
 ```python
@@ -171,6 +189,7 @@ while lap <= TOTAL_LAPS:
 # ...
 # Lap: 10
 ```
+**Why this works:** Naming `TOTAL_LAPS` in uppercase clearly separates the fixed boundary (`10`) from the mutable counter variable (`lap`).
 
 ---
 
@@ -195,11 +214,18 @@ while passenger_num <= PASSENGERS:
 # Printing boarding pass 4 of 5...
 # Printing boarding pass 5 of 5...
 ```
+
+:::note
+
 *(Note: Adding the trailing `...` inside the f-string matches the exact formatting requested in the challenge prompt: `"Printing boarding pass 1 of 5..."`.)*
+
+:::
 
 ---
 
 ## 5. Common Pitfalls & Gotchas for JS Devs
+
+:::warning
 
 ### 1. Writing `count++` Out of Muscle Memory
 ```python
@@ -239,9 +265,13 @@ while True:
         break
 ```
 
+:::
+
 ---
 
 ## 6. Edge Cases to Watch For
+
+:::danger
 
 ### Skipping an Iteration with `continue` vs. Exiting with `break`
 - `break` kills the entire loop.
@@ -263,12 +293,20 @@ while num < 5:
 # 5
 ```
 
+:::
+
+:::note
+
 ### Zero-Passenger Booking (`PASSENGERS = 0`)
 If `PASSENGERS = 0` and `passenger_num = 1`, the initial check `1 <= 0` immediately evaluates to `False`. The loop body runs `0` times, safely printing nothing without crashing.
+
+:::
 
 ---
 
 ## 7. Practical Patterns & Reusable Recipes
+
+:::tip
 
 ### Pattern 1: Input Validation Loop (Keep Asking Until Valid)
 A classic real-world use case for `while` loops is re-prompting a user until they provide valid input:
@@ -297,4 +335,4 @@ print("Liftoff!")
 # Launching in 1...
 # Liftoff!
 ```
-**Why this works:** Naming `TOTAL_LAPS` in uppercase clearly separates the fixed boundary (`10`) from the mutable counter variable (`lap`).
+:::

@@ -9,14 +9,24 @@ sidebar_position: 2
 ## Part 1: `if / else` Statements & Converting User Input (`int()`)
 
 ### 1. Course Module & Lesson Title
+
+:::info
+
 - **Module:** Module 2 — Control Flow & Logic (Building the Word-Scramble Game / Logic Foundations)
 - **Lesson Topic:** `if / else` Statements & Converting User Input (`int()`)
 
+:::
+
 ### 2. Concept Breakdown
+
+:::note
+
 This lesson introduces binary branching logic using `if` and `else`, alongside dynamic terminal input handling:
 - **Indentation-as-Syntax (Off-side rule):** Unlike JavaScript, which delimits blocks with curly braces `{}` and uses indentation purely for readability, Python uses whitespace indentation to define code scope. Standard Python style (PEP 8) mandates **4 spaces** per indentation level.
 - **The Colon (`:`):** Every conditional block header (`if`, `elif`, `else`) ends with a colon `:`, which signals the start of an indented block.
 - **Input Coercion:** `input()` always captures keyboard input as a string (`str`). Comparison operators like `>=` or `<` cannot compare strings to integers directly in Python without raising a `TypeError`. Wrapping `input()` in `int()` explicitly converts the numeric string into an integer.
+
+:::
 
 ### 3. JS vs. Python Mental Bridge
 
@@ -48,6 +58,9 @@ else:
 - `if student_score >= 60:`: Evaluates the expression. If `True`, the indented block runs; if `False`, execution jumps to the `else:` branch.
 
 ### 5. Common Pitfalls & Gotchas for JS Devs
+
+:::danger
+
 - **Indentation Errors (`IndentationError`):** Mixing tabs and spaces, or using 2 spaces in one file and 4 in another, will crash the interpreter. Stick to 4 spaces everywhere.
 - **Strict Typing on Comparisons (`TypeError`):**
   - JavaScript: `"75" >= 60` evaluates to `true` due to implicit coercion.
@@ -55,9 +68,19 @@ else:
 - **Float Parsing Crash (`ValueError`):**
   - In JS, `parseInt("60.5")` returns `60`.
   - In Python, `int("60.5")` raises a `ValueError: invalid literal for int() with base 10: '60.5'`. If a user might enter decimals, parse with `float()` first.
+
+:::
+
+:::warning
+
 - **No Triple Equals (`===`):** Python does not have a `===` operator. Use `==` to check equality of values. The keyword `is` exists in Python, but it checks object identity (memory address, like pointer equality), not equality.
 
+:::
+
 ### 6. Edge Cases & Practical Patterns
+
+:::tip
+
 - **Non-Numeric Strings / Decimals:** If the user inputs `"abc"` or `""`, `int()` raises `ValueError`. If the score includes decimals (e.g., `59.5`), use `float()`:
   ```python
   score = float(input("Enter score: "))
@@ -69,16 +92,27 @@ else:
   ```
 - **Ternary Operator Comparison:**
   - JavaScript: `const status = score >= 60 ? "Pass" : "Fail";`
+  - Python: `status = "Pass" if score >= 60 else "Fail"`
+
+:::
 
 ---
 
 ## Part 2: Multi-Branch Conditionals (`elif`) & Evaluation Order
 
 ### 1. Course Module & Lesson Title
+
+:::info
+
 - **Module:** Module 2 — Control Flow & Logic (Building the Word-Scramble Game / Decision Trees)
 - **Lesson Topic:** Chaining Conditionals with `elif` & Short-Circuit Evaluation Order
 
+:::
+
 ### 2. Concept Breakdown
+
+:::note
+
 This lesson introduces multi-way branching using `if / elif / else` chains and highlights how evaluation order dictates code behavior:
 - **The `elif` Keyword:** Python's contraction of `else if`. It allows checking multiple mutually exclusive conditions sequentially without deeply nested indentation.
 - **Top-to-Bottom Short-Circuiting:** Python evaluates conditions from top to bottom. The moment one condition evaluates to `True`, Python runs that block and completely skips the rest of the chain.
@@ -87,6 +121,8 @@ This lesson introduces multi-way branching using `if / elif / else` chains and h
   - `elif signal <= 2:` catches `1` and `2` (since `0` was already handled).
   - `elif signal <= 4:` catches `3` and `4` (since `0`, `1`, and `2` were already handled).
   - `else:` catches `5` (and anything above).
+
+:::
 
 ### 3. JS vs. Python Mental Bridge
 
@@ -101,6 +137,9 @@ This lesson introduces multi-way branching using `if / elif / else` chains and h
 ### 4. Code Walkthrough
 
 #### Part A: The Commented Bug Walkthrough (Evaluation Trap)
+
+:::danger
+
 ```python
 # test_score = 85
 # if test_score >= 80:
@@ -110,6 +149,8 @@ This lesson introduces multi-way branching using `if / elif / else` chains and h
 ```
 - **Why it breaks:** If a student scores `95`, the interpreter tests `95 >= 80`. That is `True`. The interpreter prints `"A"`, terminates the conditional chain, and never checks `test_score >= 90`.
 - **The rule:** When testing ranges, order conditions from **most restrictive to least restrictive** (e.g., `>= 90`, then `>= 80`, then `>= 70`).
+
+:::
 
 #### Part B: The Solution Code
 ```python
@@ -134,17 +175,29 @@ else:
 ```
 
 ### 5. Common Pitfalls & Gotchas for JS Devs
+
+:::warning
+
 - **Using `else if` instead of `elif`:** Typing `else if condition:` triggers a `SyntaxError: invalid syntax` in Python.
 - **Typing `&&` and `||`:** Writing `if signal >= 1 && signal <= 2:` will fail with a `SyntaxError`. In Python, you must write `if signal >= 1 and signal <= 2:` (or `if 1 <= signal <= 2:`).
 - **Loose Equality Surprises Don't Exist:** In JS, `"" == false` or `0 == ""` evaluates to `true`. In Python, `"" == False` and `0 == ""` both evaluate to `False`. Python does not coerce types across equality checks.
 - **Fallthrough / Switch statements:** JS has `switch (val) { case ... break; }`. Until Python 3.10, Python had no switch statement at all (relying purely on `if/elif/else`). Python 3.10 introduced `match/case` (pattern matching), which does not require `break` statements.
 
+:::
+
 ### 6. Edge Cases to Watch For
+
+:::note
+
 - **Negative Numbers:** If `signal = -1`, `signal <= 2` evaluates to `True`, triggering the `"25% off"` discount rather than an error.
 - **Numbers Exceeding Max Bars:** If `signal = 10`, it falls through to the `else` branch and prints `"Full bars, no discount today!"`.
 - **Boundary Validation:** In production code, guard with a range check: `if not (0 <= signal <= 5): print("Invalid signal")`.
 
+:::
+
 ### 7. Practical Patterns & Reusable Recipes
+
+:::tip
 
 #### Pattern 1: Python Chained Comparison (Idiomatic Python)
 ```python
@@ -171,4 +224,5 @@ signal = 2
 message = discounts.get(signal, "Invalid signal value")
 print(message)
 ```
-  - Python: `status = "Pass" if score >= 60 else "Fail"`
+
+:::

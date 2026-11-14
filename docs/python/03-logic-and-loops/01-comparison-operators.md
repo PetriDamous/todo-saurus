@@ -8,7 +8,11 @@ sidebar_position: 1
 
 ## Part 1: Equality Operators (`==` and `!=`)
 
+:::info
+
 **Lesson Goal:** Learn how Python compares values, understand Boolean results (`True` and `False`), use equality operators with user input, and understand why comparisons are case-sensitive. This is the foundation for all conditional logic that you'll learn later (`if`, `elif`, `else`). [[scrimba.com]](https://scrimba.com)
+
+:::
 
 ### Why This Lesson Matters
 
@@ -41,6 +45,9 @@ print(password == user_password)
 Both values match.
 
 #### Mental Model
+
+:::note
+
 Think of `==` as asking: *Do these two values contain the same thing?*
 
 ```text
@@ -50,13 +57,20 @@ Think of `==` as asking: *Do these two values contain the same thing?*
 Result: True
 ```
 
+:::
+
 #### JavaScript Comparison
+
+:::info
+
 - **Python:** `password == user_password`
 - **JavaScript:** `password === userPassword`
 
 As a JavaScript developer, you should mentally translate `==` to `===` (not `==`), because Python's equality operator behaves much more predictably:
 - **JavaScript:** `5 == "5"` → `true` (because JavaScript performs type coercion).
 - **Python:** `5 == "5"` → `False` (Python doesn't automatically pretend strings and numbers are the same).
+
+:::
 
 #### What Is Being Compared?
 ```python
@@ -101,11 +115,16 @@ print(promo_code != user_promo_code)
 ```
 
 #### Mental Model
+
+:::note
+
 Read `!=` as: **NOT equal to**.
 
 ```text
 FLASH50 != SAVE10  ──▶ Different ──▶ Result: True
 ```
+
+:::
 
 #### Relationship Between `==` And `!=`
 
@@ -132,6 +151,8 @@ Suppose user enters `FLASH50`:
 
 ### Case Sensitivity
 
+:::warning
+
 The instructor specifically points out that `FLASH50` and `flash50` produce different results:
 
 ```python
@@ -141,7 +162,12 @@ print(promo_code == user_promo_code)
 # Output: False (Because "F" != "f")
 ```
 
+:::
+
 #### Common Solution: Convert Both Values to Lowercase
+
+:::tip
+
 ```python
 promo_code = "FLASH50"
 user_promo_code = input("Promo code: ").lower()
@@ -155,17 +181,28 @@ print(promo_code.lower() == user_promo_code)
 promoCode.toLowerCase() === userPromoCode.toLowerCase()
 ```
 
+:::
+
 ### Equality Common Mistakes & Things The Course Didn't Cover
+
+:::warning
 
 1. **Using Assignment Instead Of Comparison:** `promo_code = user_promo_code` assigns; it does NOT compare. Use `==`.
 2. **Forgetting Case Sensitivity:** `"FLASH50" == "flash50"` evaluates to `False`.
 3. **Comparing Different Types:** `5 == "5"` evaluates to `False`.
+4. **Comparisons Return Values:** You can store them in variables (`is_correct = (promo_code == user_promo_code)`) or print them directly, and they become conditions later (`if promo_code == user_promo_code:`).
+
+:::
 
 ---
 
 ## Part 2: Comparison Operators (`>`, `<`, `>=`, `<=`)
 
+:::info
+
 **Lesson Goal:** Learn how to compare values, understand how comparison operations produce Boolean values (`True` or `False`), and use comparisons to answer business questions inside your programs. This lesson builds directly on `==` and `!=` and brings us much closer to writing `if` statements. [[scrimba.com]](https://scrimba.com)
+
+:::
 
 ### What Is A Comparison Operator?
 
@@ -194,6 +231,8 @@ is_adult = age >= 18
 
 ### Using Comparisons Inside F-Strings
 
+:::tip
+
 ```python
 age = 20
 print(f"Is Old Enough: {age >= 18}")
@@ -202,6 +241,8 @@ print(f"Is Old Enough: {age >= 18}")
 # Output: Is Old Enough: True
 ```
 Because `f"{expression}"` evaluates whatever is inside the braces, you can embed any comparison directly (`age >= 18`, `cart_total < 50`, `tickets_left <= 0`).
+
+:::
 
 ### Challenge Breakdown
 
@@ -220,6 +261,8 @@ tickets_left = 8
 
 ### String Comparisons
 
+:::note
+
 Strings can also be compared based on alphabetical (lexicographical) ordering:
 
 ```python
@@ -228,6 +271,8 @@ print("banana" < "cherry")
 # JS equivalent: console.log("banana" < "cherry"); -> true
 ```
 
+:::
+
 ### Real-World Examples
 - **Message Notifications:** `unread_messages > 0`
 - **Age Verification:** `age >= 18`
@@ -235,9 +280,14 @@ print("banana" < "cherry")
 - **Ticket Sales:** `tickets_left <= 0`
 
 ### Common Beginner Mistakes
+
+:::warning
+
 - **Confusing `>` and `>=`:** `18 > 18` is `False`; `18 >= 18` is `True`.
 - **Confusing `<` and `<=`:** `0 < 0` is `False`; `0 <= 0` is `True`.
 - **Thinking comparisons produce text:** They produce Booleans (`True` / `False`), not strings (`"True"` / `"False"`).
+
+:::
 
 ### JavaScript Translation Guide
 
@@ -252,6 +302,9 @@ print("banana" < "cherry")
 | `.lower()` | `.toLowerCase()` |
 
 ### Key Takeaways
+
+:::tip
+
 1. `==` checks if two values are equal; `!=` checks if two values are different. [\[scrimba.com\]](https://scrimba.com)
 2. Comparisons return Boolean values (`True` or `False`). [\[scrimba.com\]](https://scrimba.com)
 3. Python comparisons are case-sensitive (`"FLASH50"` and `"flash50"` are not equal). [\[scrimba.com\]](https://scrimba.com)
@@ -259,4 +312,5 @@ print("banana" < "cherry")
 5. `>`, `<`, `>=`, and `<=` compare numbers and can also compare strings alphabetically. [\[scrimba.com\]](https://scrimba.com)
 6. Comparisons can be stored in variables or placed directly inside f-strings. [\[scrimba.com\]](https://scrimba.com)
 7. Comparisons are the foundation of conditional logic (`if`, `elif`, `else`).
-4. **Comparisons Return Values:** You can store them in variables (`is_correct = (promo_code == user_promo_code)`) or print them directly, and they become conditions later (`if promo_code == user_promo_code:`).
+
+:::

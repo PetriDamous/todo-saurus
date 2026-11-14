@@ -6,7 +6,11 @@ sidebar_position: 4
 
 # Python Logic and Loops: The Random Module
 
+:::info
+
 **Lesson Goal:** Learn how Python handles randomness through the `random` module, how to import and use modules, how to randomly select items from a list, and how to randomly reorder an entire list. This lesson is also your first introduction to Python's module system. [[scrimba.com]](https://scrimba.com)
+
+:::
 
 ---
 
@@ -37,6 +41,9 @@ import random
 ```
 
 ### Mental Model
+
+:::info
+
 Think of Python as a giant toolbox:
 
 ```text
@@ -51,15 +58,27 @@ Python
 
 Not all tools are loaded immediately. If you need the Random toolbox: `import random`.
 
+:::
+
 ### JavaScript Comparison
+
+:::info
+
 Conceptually similar to:
 ```javascript
 import React from "react";
 import { useState } from "react";
 ```
 
+:::
+
 ### Namespace Concept
+
+:::note
+
 When Python imports a module (`import random`), everything remains inside the `random` namespace, so you write `random.choice()` instead of `choice()`.
+
+:::
 
 ---
 
@@ -92,12 +111,17 @@ Imagine placing the values into a hat and grabbing one:
 ```
 
 ### JavaScript Comparison
+
+:::info
+
 JavaScript doesn't provide a built-in equivalent—you'd typically write:
 ```javascript
 const restaurants = ["Thai Palace", "Burrito Bar", "Noodle House"];
 const randomRestaurant = restaurants[Math.floor(Math.random() * restaurants.length)];
 ```
 Python's `random.choice(restaurants)` achieves the same result with no loops, indexes, or complicated math.
+
+:::
 
 ---
 
@@ -115,6 +139,8 @@ Imagine shuffling a deck of cards (`Ace, King, Queen, Jack` → `Queen, Ace, Jac
 
 ### Important Discovery: Mutation
 
+:::warning
+
 This lesson introduces **Mutation**—changing existing data:
 
 ```python
@@ -122,6 +148,8 @@ players = ["Mara", "Devon", "Priya", "Leo"]
 random.shuffle(players)
 # The original list changes in place!
 ```
+
+:::
 
 ### `shuffle()` vs `sorted()`
 
@@ -156,6 +184,9 @@ random.choice(players)
 ## Things The Course Didn't Cover & JavaScript Developer Notes
 
 ### 1. `shuffle()` Returns Nothing (`None`)
+
+:::danger
+
 Many beginners assume `shuffled_players = random.shuffle(players)` will contain the shuffled list. It won't:
 
 ```python
@@ -169,15 +200,30 @@ random.shuffle(players)
 print(players)
 ```
 
+:::
+
 ### 2. `choice()` Does NOT Remove An Item
+
+:::note
+
 `winner = random.choice(players)` does NOT remove that player—the original list remains unchanged.
 
+:::
+
 ### 3. JavaScript Developer Notes
+
+:::info
+
 - **`random.choice(players)`** ≈ `players[Math.floor(Math.random() * players.length)]`
+- **`random.shuffle(players)`** ≈ JavaScript has no simple built-in equivalent (many developers use `array.sort(() => Math.random() - 0.5)`). Python gives you a proper shuffle out of the box.
+
+:::
 
 ---
 
 ## Common Beginner Mistakes
+
+:::warning
 
 1. **Forgetting to import:** Calling `random.choice(players)` without `import random` raises a `NameError`.
 2. **Expecting `shuffle()` to return a list:** `players = random.shuffle(players)` overwrites `players` with `None`.
@@ -185,9 +231,13 @@ print(players)
    - `choice()` → One item
    - `shuffle()` → Entire list reordered
 
+:::
+
 ---
 
 ## Key Takeaways
+
+:::tip
 
 1. Modules are collections of reusable functionality.
 2. `import random` loads Python's random module. [[scrimba.com]](https://scrimba.com)
@@ -196,4 +246,5 @@ print(players)
 5. `sorted()` and `shuffle()` have very different behaviors (non-mutating vs. mutating).
 6. Python provides much simpler random list operations than JavaScript's built-in APIs.
 7. Understanding modules is the first step toward learning larger Python ecosystems like `json`, `math`, `FastAPI`, and eventually `CrewAI`.
-- **`random.shuffle(players)`** ≈ JavaScript has no simple built-in equivalent (many developers use `array.sort(() => Math.random() - 0.5)`). Python gives you a proper shuffle out of the box.
+
+:::
