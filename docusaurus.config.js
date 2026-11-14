@@ -40,6 +40,11 @@ const config = {
     locales: ['en'],
   },
 
+  // Safeguard for standard Markdown parsing (Docusaurus v3)
+  markdown: {
+    format: 'detect',
+  },
+
   presets: [
     [
       'classic',
